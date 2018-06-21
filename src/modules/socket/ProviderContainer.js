@@ -5,7 +5,7 @@ import SocketProvider from './Provider';
 
 const SocketProviderContainer = (props)=>{
   // const { host } = props
-  const host = window.STORAGE.settings.getRelay()
+  const host = window.STORAGE.settings.getRelay() + ":8087"
   return (
       <SocketProvider url={host}>
         {props.children}

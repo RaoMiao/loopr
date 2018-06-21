@@ -15,10 +15,14 @@ const getWallet = (address) => {
 };
 
 const getNonce = async (address) => {
+  console.log("getnonce heheheheheh")
   try {
+    console.log("getnonce heheheheheh1")
     validator.validate({value: address, type: "ADDRESS"});
     const nonce = toNumber((await getTransactionCount(address, 'pending')).result) || 0;
+    console.log("getnonce heheheheheh2") 
     const localNonce = getWallet(address) && getWallet(address).nonce ? getWallet(address).nonce : 0;
+    console.log("getnonce heheheheheh3")    
     return Math.max(nonce,localNonce)
   } catch (e) {
     throw  new Error(e.message)
