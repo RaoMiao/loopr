@@ -13,7 +13,7 @@ function parseJSON(res) {
 let checkHost = () => {
   const relayHost = window.STORAGE.settings.getRelay()
   window.LOOPRING_PROVIDER_HOST = relayHost + ":8083" + '/rpc/v2'
-  window.ETH_HOST = relayHost + ":8083" + '/eth'
+  window.ETH_HOST = relayHost + ":8545"
 
   if (!window.LOOPRING_PROVIDER_HOST) {
     throw new Error('host is required. Do not forget: new Loopring(host)')

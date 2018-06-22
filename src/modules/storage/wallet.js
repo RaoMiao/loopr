@@ -21,9 +21,9 @@ const getNonce = async (address) => {
     validator.validate({value: address, type: "ADDRESS"});
     const nonce = toNumber((await getTransactionCount(address, 'pending')).result) || 0;
     console.log("getnonce heheheheheh2") 
-    const localNonce = getWallet(address) && getWallet(address).nonce ? getWallet(address).nonce : 0;
+    //const localNonce = getWallet(address) && getWallet(address).nonce ? getWallet(address).nonce : 0;
     console.log("getnonce heheheheheh3")    
-    return Math.max(nonce,localNonce)
+    return nonce
   } catch (e) {
     throw  new Error(e.message)
   }
